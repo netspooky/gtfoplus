@@ -42,7 +42,7 @@ def loadBin(binFile):
       cleaned = stream.readlines()
       cleaned = cleaned[:-1]
       cleaned = ''.join(cleaned)
-      data    = yaml.load(cleaned)
+      data    = yaml.load(cleaned,Loader=yaml.FullLoader)
     except yaml.YAMLError as exc:
       print(exc)
   return data
